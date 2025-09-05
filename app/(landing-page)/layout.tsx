@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
+import "../globals.css";
 import { Providers } from "@/context/providers";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";

@@ -1,8 +1,11 @@
 "use client";
 
+import { gotoSection } from "@/lib/scroll";
 import { Clock, MapPin } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className="py-12 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,21 +29,57 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Classes</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>Pilates Fundamentals</li>
-              <li>HIIT Training</li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => gotoSection("services", router, "/")}
+                  className="cursor-pointer font-normal hover:opacity-80 transition-opacity"
+                  aria-label="Go to Services"
+                >
+                  Pilates Classes
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => gotoSection("services", router, "/")}
+                  className="cursor-pointer font-normal hover:opacity-80 transition-opacity"
+                  aria-label="Go to Services"
+                >
+                  HIIT Training
+                </button>
+              </li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-foreground mb-4">Studio</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>About Us</li>
+              <button
+                type="button"
+                onClick={() => router.push("/about-us")}
+                className="cursor-pointer font-normal hover:opacity-80 transition-opacity"
+                aria-label="Go to Services"
+              >
+                About Us
+              </button>
               <li>Instructors</li>
               <li>Membership</li>
-              <li>Contact</li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => router.push("/contact-us")}
+                  className="cursor-pointer font-normal hover:opacity-80 transition-opacity"
+                  aria-label="Go to Services"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact</h3>
+            <h3 className="font-semibold text-foreground mb-4">
+              Location & Working Hours
+            </h3>
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />

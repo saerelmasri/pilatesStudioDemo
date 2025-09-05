@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { scrollToSection } from "@/lib/scroll";
+import { gotoSection } from "@/lib/scroll";
 
 export default function Hero() {
   return (
@@ -39,7 +39,7 @@ export default function Hero() {
           <Button
             size="lg"
             className="mb-6 text-white border-white/30 bg-white/10 cursor-pointer"
-            onClick={() => scrollToSection("calendar")}
+            onClick={() => gotoSection("calendar")}
           >
             Start Your Journey
             <ArrowRight className="ml-2 h-5 w-5" />

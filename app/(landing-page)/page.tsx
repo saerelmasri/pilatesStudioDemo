@@ -4,14 +4,16 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { scrollToSection } from "@/lib/scroll";
 import AuthModalPortal from "@/components/AuthModalPortal";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services/Services";
 import CalendarSec from "@/components/sections/Calendar/CalendarSec";
 import Reviews from "@/components/sections/Reviews/Reviews";
+import { gotoSection } from "@/lib/scroll";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const router = useRouter();
   return (
     <div className="min-h-screen ">
       <Hero />
@@ -44,7 +46,7 @@ export default function HomePage() {
                 variant="outline"
                 size="lg"
                 className="cursor-pointer"
-                onClick={() => scrollToSection("membership")}
+                onClick={() => gotoSection("membership", router, "/membership")}
               >
                 Try a Free Class
               </Button>
@@ -83,7 +85,7 @@ export default function HomePage() {
             size="lg"
             variant="secondary"
             className="px-8 py-3 cursor-pointer"
-            onClick={() => scrollToSection("calendar")}
+            onClick={() => gotoSection("calendar")}
           >
             Book Your First Class
             <ArrowRight className="ml-2 h-5 w-5" />

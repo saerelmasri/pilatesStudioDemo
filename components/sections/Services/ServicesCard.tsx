@@ -5,7 +5,7 @@ import { ArrowRight, Clock, Heart, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { scrollToSection } from "@/lib/scroll";
+import { gotoSection } from "@/lib/scroll";
 
 type ServiceCardProp = {
   title: string;
@@ -60,7 +60,7 @@ export default function ServicesCard({
         </div>
         <Button
           className="w-full cursor-pointer"
-          onClick={() => scrollToSection("calendar")}
+          onClick={() => gotoSection("calendar")}
         >
           Book {title} Class
           <ArrowRight className="ml-2 h-4 w-4" />

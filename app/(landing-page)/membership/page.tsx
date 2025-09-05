@@ -340,16 +340,17 @@ export default function MembershipPage() {
             <Button
               size="lg"
               variant="secondary"
+              className="px-8 py-3 cursor-pointer"
               onClick={() => (window.location.href = "/#calendar")}
             >
               Book Your First Class
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Link href="/">
+            <Link href="/about-us">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent cursor-pointer"
               >
                 Learn More
               </Button>
