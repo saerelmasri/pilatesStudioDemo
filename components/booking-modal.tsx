@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -26,7 +25,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
 
 interface Session {
   id: string;
@@ -290,7 +289,7 @@ export default function BookingModal({
                 <Checkbox
                   id="agreeToTerms"
                   checked={form.agreeToTerms}
-                  onCheckedChange={(checked) =>
+                  onCheckedChange={(checked: boolean) =>
                     handleInputChange("agreeToTerms", checked as boolean)
                   }
                 />
@@ -314,7 +313,7 @@ export default function BookingModal({
                 <Checkbox
                   id="agreeToWaiver"
                   checked={form.agreeToWaiver}
-                  onCheckedChange={(checked) =>
+                  onCheckedChange={(checked: boolean) =>
                     handleInputChange("agreeToWaiver", checked as boolean)
                   }
                 />
@@ -334,7 +333,7 @@ export default function BookingModal({
                 <Checkbox
                   id="marketingConsent"
                   checked={form.marketingConsent}
-                  onCheckedChange={(checked) =>
+                  onCheckedChange={(checked: boolean) =>
                     handleInputChange("marketingConsent", checked as boolean)
                   }
                 />
@@ -349,11 +348,19 @@ export default function BookingModal({
             </div>
 
             <div className="flex justify-end space-x-4 pt-4">
-              <Button variant="outline" onClick={handleClose}>
+              <Button
+                variant="outline"
+                onClick={handleClose}
+                className="cursor-pointer"
+              >
                 Cancel
               </Button>
-              <Button onClick={handleNext} disabled={!isDetailsValid}>
-                Continue to Payment
+              <Button
+                onClick={handleNext}
+                disabled={!isDetailsValid}
+                className="cursor-pointer"
+              >
+                Continue
               </Button>
             </div>
           </div>
@@ -434,11 +441,15 @@ export default function BookingModal({
             </div>
 
             <div className="flex justify-between space-x-4 pt-4">
-              <Button variant="outline" onClick={handleBack}>
+              <Button
+                variant="outline"
+                onClick={handleBack}
+                className="cursor-pointer"
+              >
                 Back
               </Button>
-              <Button onClick={handleNext} className="flex-1">
-                Complete Booking (${session.price + 2.5})
+              <Button onClick={handleNext} className="flex-1 cursor-pointer">
+                Complete Booking (${session.price})
               </Button>
             </div>
           </div>
@@ -511,11 +522,11 @@ export default function BookingModal({
               <Button
                 variant="outline"
                 onClick={handleClose}
-                className="flex-1 bg-transparent"
+                className="flex-1 bg-transparent cursor-pointer"
               >
                 Close
               </Button>
-              <Button className="flex-1">Add to Calendar</Button>
+              {/* <Button className="flex-1">Add to Calendar</Button> */}
             </div>
           </div>
         )}

@@ -291,7 +291,7 @@ export default function AuthModal({
 
           <Button
             type="submit"
-            className="w-full"
+            className="w-full cursor-pointer"
             disabled={!isFormValid() || submitting}
           >
             {submitting
@@ -319,7 +319,7 @@ export default function AuthModal({
             <button
               type="button"
               onClick={() => setMode(mode === "login" ? "signup" : "login")}
-              className="text-primary hover:underline font-medium"
+              className="text-primary hover:underline font-medium cursor-pointer"
             >
               {mode === "login" ? "Sign up" : "Sign in"}
             </button>
@@ -330,7 +330,7 @@ export default function AuthModal({
           <div className="text-center">
             <button
               type="button"
-              className="text-sm text-primary hover:underline"
+              className="text-sm text-primary hover:underline cursor-pointer"
             >
               Forgot your password?
             </button>

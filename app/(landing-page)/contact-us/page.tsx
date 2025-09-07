@@ -25,45 +25,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// Replace with your real branches
-const BRANCHES = [
-  {
-    id: "downtown",
-    name: "Downtown Studio",
-    address: "Main Street 12, Downtown",
-    city: "Beirut",
-    country: "Lebanon",
-    phone: "+961 1 234 567",
-    email: "hello@yourstudio.com",
-    hours: [
-      { d: "Mon–Fri", h: "6:30–21:00" },
-      { d: "Sat", h: "8:00–18:00" },
-      { d: "Sun", h: "Closed" },
-    ],
-    gmapsQuery:
-      "https://www.google.com/maps/search/?api=1&query=Main+Street+12+Beirut",
-    mapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d35.5!3d33.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU0JzAwLjAiTiAzNcKwMzAnMDAuMCJF!5e0!3m2!1sen!2s!4v0000000000000",
-  },
-  {
-    id: "waterfront",
-    name: "Waterfront Studio",
-    address: "Seaside Ave 44, Waterfront District",
-    city: "Beirut",
-    country: "Lebanon",
-    phone: "+961 1 987 654",
-    email: "waterfront@yourstudio.com",
-    hours: [
-      { d: "Mon–Fri", h: "7:00–21:30" },
-      { d: "Sat", h: "8:00–18:00" },
-      { d: "Sun", h: "8:00–12:00" },
-    ],
-    gmapsQuery:
-      "https://www.google.com/maps/search/?api=1&query=Seaside+Ave+44+Beirut",
-    mapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d35.5!3d33.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU0JzAwLjAiTiAzNcKwMzAnMDAuMCJF!5e0!3m2!1sen!2s!4v0000000000001",
-  },
-] as const;
+import BRANCHES_JSON from "../../../common/branches.json";
+import { Branch } from "@/types/types";
+const BRANCHES: Branch[] = BRANCHES_JSON;
 
 export default function ContactPage() {
   const [selectedId, setSelectedId] = useState<string>(BRANCHES[0]?.id);
@@ -92,12 +56,12 @@ export default function ContactPage() {
           </div>
 
           {/* Branch selector */}
-          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center">
+          {/* <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center">
             <Select value={selectedId} onValueChange={setSelectedId}>
               <SelectTrigger className="w-full sm:w-72">
                 <SelectValue placeholder="Select a location" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent position="popper" sideOffset={8}>
                 {BRANCHES.map((b) => (
                   <SelectItem key={b.id} value={b.id}>
                     {b.name}
@@ -113,7 +77,7 @@ export default function ContactPage() {
                 <Navigation className="h-4 w-4 mr-2" /> Get Directions
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -267,10 +231,7 @@ export default function ContactPage() {
                   <Input placeholder="Email address" type="email" />
                 </div>
                 <Input placeholder="Phone (optional)" />
-                <Textarea
-                  placeholder="How can we help?"
-                  className="min-h-[120px]"
-                />
+                <Input placeholder="How can we help?" />
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-muted-foreground">
                     By sending, you agree to be contacted about your inquiry.
