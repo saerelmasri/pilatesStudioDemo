@@ -5,10 +5,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import AuthModalPortal from "@/components/AuthModalPortal";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services/Services";
-import CalendarSec from "@/components/sections/Calendar/CalendarSec";
-import Reviews from "@/components/sections/Reviews/Reviews";
+import Hero from "@/components/landing-page/Hero";
+import Services from "@/components/landing-page/Services/Services";
+import CalendarSec from "@/components/landing-page/Calendar/CalendarSec";
+import Reviews from "@/components/landing-page/Reviews/Reviews";
 import { gotoSection } from "@/lib/scroll";
 import { useRouter } from "next/navigation";
 

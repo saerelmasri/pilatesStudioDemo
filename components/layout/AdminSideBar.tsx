@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays, LayoutDashboard } from "lucide-react";
+import { CalendarDays, GraduationCap, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -59,6 +59,19 @@ export default function AdminSidebar({
           >
             <CalendarDays className="h-5 w-5" />
             <span>Classes</span>
+          </Link>
+
+          <Link
+            href="/admin/instructors"
+            onClick={() => setIsSidebarOpen(false)}
+            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              pathname === "/admin/instructors"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <GraduationCap className="h-5 w-5" />
+            <span>Instructors</span>
           </Link>
         </nav>
       </aside>
