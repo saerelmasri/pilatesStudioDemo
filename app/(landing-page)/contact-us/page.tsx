@@ -56,7 +56,7 @@ export default function ContactPage() {
           </div>
 
           {/* Branch selector */}
-          {/* <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center">
             <Select value={selectedId} onValueChange={setSelectedId}>
               <SelectTrigger className="w-full sm:w-72">
                 <SelectValue placeholder="Select a location" />
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 <Navigation className="h-4 w-4 mr-2" /> Get Directions
               </Button>
             </Link>
-          </div> */}
+          </div>
         </div>
       </section>
 
